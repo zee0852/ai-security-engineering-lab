@@ -1,0 +1,82 @@
+AI CYBERSECURITY INCIDENT TRIAGE REPORT
+Generated: 2026-04-30 23:12:49
+Model Used: mistral:7b
+============================================================
+
+PRE-EXTRACTED IP INDICATORS:
+- 103.77.192.88
+- 185.220.101.45
+- 192.168.1.10
+- 192.168.1.20
+- 45.33.32.156
+
+============================================================
+
+ **Cybersecurity Incident Triage Report**
+
+**1. Executive Summary:**
+
+Multiple failed SSH login attempts have been detected from the IP address 1
+185.220.101.45 targeting various user accounts (admin, root, test, ubuntu, 
+invalid user guest). Additionally, an unauthorized access attempt was made 
+to the web server's admin panel from IP address 103.77.192.88 and a packet 
+drop was observed originating from 45.33.32.156 attempting to connect to po
+port 22 on 192.168.1.10.
+
+**2. Likely Attack Techniques:**
+
+The repeated failed login attempts from IP address 185.220.101.45 indicate 
+a brute-force attack to gain unauthorized access to the system via SSH. The
+The connection attempt to the web server's admin panel from IP address 103.
+103.77.192.88 suggests an attempt at exploiting weak credentials or a vulne
+vulnerability in the web application. The dropped packet from IP address 45
+45.33.32.156 targeting port 22 on 192.168.1.10 may be part of a broader rec
+reconnaissance effort, attempting to identify open SSH services.
+
+**3. Analysis of the Suspicious IP Addresses:**
+
+- **185.220.101.45:** This IP address has exhibited numerous failed login a
+attempts against multiple accounts on the system, indicating a targeted att
+attack or brute force attempt to gain unauthorized access.
+
+- **103.77.192.88:** The connection to the web server's admin panel from th
+this IP address suggests an attempt at exploiting weak credentials or a vul
+vulnerability in the web application. It is worth noting that it successful
+successfully accessed the main webpage.
+
+- **192.168.1.10, 192.168.1.20:** These are internal IP addresses within yo
+your network. The packet drop from an external IP (45.33.32.156) targeting 
+192.168.1.10 may indicate a reconnaissance effort to identify open SSH serv
+services or other vulnerabilities on the internal network.
+
+- **45.33.32.156:** This external IP address attempted to connect to an int
+internal system (192.168.1.10) via SSH, which was dropped by the firewall. 
+This may be part of a broader reconnaissance effort or an attempt to identi
+identify open services on your network.
+
+**4. Severity Rating:** High
+
+The repeated failed login attempts and the connection to the web server's a
+admin panel from external sources suggest a significant security threat tha
+that requires immediate attention. The internal IP address (192.168.1.10) b
+being targeted by an external source further increases the severity rating 
+of this incident.
+
+**5. Recommended Response Actions:**
+
+- Immediately change all affected account passwords, ensuring they are stro
+strong and unique.
+- Implement rate limiting on SSH login attempts to prevent brute force atta
+attacks.
+- Investigate the web server for any potential vulnerabilities or weak cred
+credentials that could have allowed unauthorized access.
+- Inspect logs for any additional suspicious activity related to these IP a
+addresses.
+- Review and update firewall rules to further secure your network perimeter
+perimeter.
+- Consider implementing an intrusion detection system (IDS) or intrusion pr
+prevention system (IPS) to monitor and block suspicious traffic more effect
+effectively.
+- If necessary, contact law enforcement authorities for further
+investigation.
+
